@@ -12,7 +12,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import br.edu.ifsp.scl.pdm.dados.databinding.ActivityMainBinding
 import kotlin.random.Random
 import kotlin.random.nextInt
-import kotlin.random.nextUInt
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
@@ -74,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             }else{
                 if (auxConfig.numeroDados == 2) { //Sorteio de 2 dados
                     activityMainBinding.resultadoIv.visibility = VISIBLE
-                    activityMainBinding.resultadoIv2.visibility = GONE
+                    activityMainBinding.resultadoIv2.visibility = VISIBLE
 
                     val resultado: Int = geradorRandomico.nextInt(auxConfig.numeroFaces)
                     val resultado2: Int = geradorRandomico.nextInt(auxConfig.numeroFaces)
@@ -89,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                         resources.getIdentifier(nomeImagem, "mipmap", packageName)
                     )
 
-                    activityMainBinding.resultadoIv.setImageResource(
+                    activityMainBinding.resultadoIv2.setImageResource(
                         resources.getIdentifier(nomeImagem2, "mipmap", packageName)
                     )
                 }else{
@@ -136,5 +135,3 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 }
-
-
